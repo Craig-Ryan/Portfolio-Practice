@@ -31,7 +31,7 @@ section {
 }
 
 .banner h2 span {
-    font-size: 1.5em;
+    font-size: 1.5em; /*em adds up. size is set to 3em in the banner h2 styling then the additional 1.5em is added here*/
     font-weight: 700;
 }
 
@@ -56,7 +56,7 @@ section {
 }
 
 header { /*Had to place this here or the navbar would be out of line */
-    position: fixed;
+    position: fixed; /*The relative children respond to the fixed styling, they base their stylings from this*/
     top: 0;
     left: 0;
     width: 100%;
@@ -89,7 +89,7 @@ header.sticky .logo {
 
 header ul {
     position: relative;
-    display: flex;
+    display: flex; /*This laid out the list items in a line*/
 }
 
 header ul li {
@@ -109,7 +109,7 @@ header.sticky ul li a {
     color: #111;
 }
 
-.heading {
+.heading { /*Heading for each header of each new section*/
     width: 100%;
     text-align: center;
     margin-bottom: 30px;
@@ -121,7 +121,7 @@ header.sticky ul li a {
     font-size: 30px;
 }
 
-.content {
+.content { /*Div just below the heading div*/
     display: flex;
     justify-content: space-between;
 }
@@ -208,7 +208,7 @@ img {
 }
 
 .testimonial .content .testimonialBx {
-    max-width: calc(50% - 40px);
+    max-width: calc(50% - 40px); /*50% alone seems to push the 2nd test box into a break*/
     padding: 60px 40px;
     margin: 20px;
     background: #2196f3;
@@ -356,6 +356,8 @@ img {
 
     header ul li a {
         color: #111;
+        margin: 10px;
+        font-size: 24px;
     }
 
     .toggle {
@@ -366,5 +368,17 @@ img {
         background-repeat: no-repeat;
         background-size: 30px;
         cursor: pointer;
+    }
+
+    .toggle.active {
+        background: url(../images/close.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 25px;
+        cursor: pointer;
+    }
+    
+    header.sticky .toggle {
+        filter: invert(1); /*changed the hamburger icon from white to black when sticky is activated in header*/
     }
 }
